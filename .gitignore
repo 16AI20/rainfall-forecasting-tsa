@@ -1,0 +1,285 @@
+# ============================================================================
+# OPERATING SYSTEM FILES
+# ============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.tmp
+*.temp
+desktop.ini
+
+# Linux
+*~
+
+# ============================================================================
+# PYTHON SPECIFIC
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+!checker.cpython-37m-darwin.so
+!checker.cp37-win_amd64.pyd
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# ============================================================================
+# JUPYTER NOTEBOOK
+# ============================================================================
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# ============================================================================
+# ENVIRONMENT MANAGEMENT
+# ============================================================================
+
+# Python environments
+.env
+.env.local
+.env.*.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# uv
+uv.lock
+.uv/
+
+# conda environments
+.conda/
+
+# ============================================================================
+# DEPENDENCY MANAGEMENT
+# ============================================================================
+
+# Package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================================
+# IDE AND EDITOR SETTINGS
+# ============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm / IntelliJ
+.idea/
+*.swp
+*.swo
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*~
+*.swp
+*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# R Studio
+.Rproj.user
+.Rproj
+.Rhistory
+.RData
+.Ruserdata
+
+# ============================================================================
+# DEVELOPMENT TOOLS
+# ============================================================================
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# pre-commit
+.pre-commit-config.yaml.bak
+
+# ============================================================================
+# DOCUMENTATION
+# ============================================================================
+
+# MkDocs
+/site
+
+# Sphinx
+docs/_build/
+docs/build/
+
+# ============================================================================
+# MACHINE LEARNING / DATA SCIENCE
+# ============================================================================
+
+# Datasets and data files
+data/
+datasets/
+raw_data/
+processed_data/
+
+# Model artifacts
+model/
+models/
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.onnx
+
+# Experiment tracking
+mlruns/
+.mlflow/
+wandb/
+tensorboard/
+runs/
+logs/
+
+# Jupyter lab workspaces
+.jupyter/
+
+# ============================================================================
+# PROJECT SPECIFIC
+# ============================================================================
+
+# TSA Project specific files
+convert.py
+set_key.sh
+artifacts/
+images/plots/
+
+# Configuration backups
+*.yaml.bak
+*.yml.bak
+*.toml.bak
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/

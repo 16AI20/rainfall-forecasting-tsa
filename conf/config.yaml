@@ -1,0 +1,47 @@
+defaults:
+  - model_cfg: lstm  # default model
+  - _self_
+
+seed: 42
+exp_name: "rainfall_forecast"
+resume: false
+mode: "train"
+
+data:
+  file_path: "data/aggregated/all_features_hourly.csv"
+  target: "rainfall"
+  seq_len: 72
+  pred_len: 24
+  split_date: "2024-01-01"
+  use_scaling: true
+  use_log_target: true
+
+mlflow:
+  autolog: true
+  setup: true
+  artifact_uri: null
+
+checkpoint:
+  dir: "models"
+
+scheduler:
+  mode: "min"
+  patience: 5
+  factor: 0.5
+  monitor: "val_loss"
+
+logging:
+  artifact_dir: "artifacts"
+
+walk_forward:
+  enabled: false
+  folds: 5
+  val_window: 336
+  epochs_per_fold: 10
+
+predict:
+  date: null
+  model_path: "models/rainfall_tcn.pth"
+  api_features: ["relative-humidity", "rainfall", "air-temperature", "wind-direction", "wind-speed"]
+  val_features: ["humidity", "rainfall", "temperature", "wind_direction", "wind_speed"]
+  num_samples: 3

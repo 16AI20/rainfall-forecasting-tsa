@@ -1,0 +1,54 @@
+stages:
+  - test
+  - train
+
+variables:
+  UV_CACHE_DIR: .cache/uv
+
+cache:
+  paths:
+    - .cache/uv
+    - .cache/pip
+    - .venv/
+
+before_script:
+  - python --version
+  # Try to use uv if available, fallback to pip
+  - |
+    if command -v uv >/dev/null 2>&1 && [ -f "pyproject.toml" ]; then
+      echo "Using uv for dependency management"
+      uv sync --all-extras
+    else
+      echo "Falling back to pip"
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      pip install pytest
+    fi
+
+test_pipeline:
+  stage: test
+  script:
+    - echo "Running unit tests with pytest..."
+    - |
+      if command -v uv >/dev/null 2>&1 && [ -f "pyproject.toml" ]; then
+        uv run pytest tests/test_pipeline_components.py
+      else
+        pytest tests/test_pipeline_components.py
+      fi
+  tags:
+    - docker
+
+train_model:
+  stage: train
+  script:
+    - chmod +x run.sh
+    - ./run.sh 10 lstm
+  only:
+    - main
+    - merge_requests
+  artifacts:
+    paths:
+      - models/
+      - artifacts/
+      - logs/
+    expire_in: 1 week

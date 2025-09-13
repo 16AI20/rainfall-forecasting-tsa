@@ -1,0 +1,10 @@
+model_type: "lstm"
+registered_model_name: "rainfall_lstm"
+hidden_size: 128
+num_layers: 2
+epochs: 50
+patience: 10
+batch_size: 256
+lr: 1e-4
+probabilistic: false
+model_path: "models/rainfall_lstm.pth"
